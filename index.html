@@ -2,15 +2,440 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phạm Hoàng Gia Bảo - Cybersecurity Specialist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+  <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+          <div class="profile-image">
+              <div style="display: flex; align-items: center; justify-content: center; height: 100%; font-size: 24px; color: #88c0d0;">
+                  <i class="fas fa-user-secret"></i>
+              </div>
+          </div>
+
+          <div class="name">Phạm Hoàng Gia Bảo</div>
+          <div class="title">Chuyên gia An ninh Mạng</div>
+
+          <div class="social-links">
+              <a href="https://www.linkedin.com/in/bao-pham-4a18a2324/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/SecretJA" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://x.com/BaoHoangPhm" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:pphamhoanggiabao19092004@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+          </div>
+
+          <div class="contact-info">
+              <div class="contact-item">
+                  <span><i class="fas fa-envelope"></i></span>
+                  <div class="email-content">
+                      <strong>EMAIL</strong><br>
+                      pphamhoanggiabao19092004@gmail.com
+                  </div>
+              </div>
+
+              <div class="contact-item">
+                  <span><i class="fas fa-mobile-alt"></i></span>
+                  <div>
+                      <strong>PHONE</strong><br>
+                      (+84) 035 999 3781
+                  </div>
+              </div>
+
+              <div class="contact-item">
+                  <span><i class="fas fa-birthday-cake"></i></span>
+                  <div>
+                      <strong>BIRTHDAY</strong><br>
+                      19/09/2004
+                  </div>
+              </div>
+
+              <div class="contact-item">
+                  <span><i class="fas fa-map-marker-alt"></i></span>
+                  <div>
+                      <strong>LOCATION</strong><br>
+                      Ho Chi Minh City, Vietnam
+                  </div>
+              </div>
+
+              <div class="contact-item">
+                  <span><i class="fas fa-university"></i></span>
+                  <div>
+                      <strong>UNIVERSITY</strong><br>
+                      HUFLIT
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+          <!-- Navigation -->
+          <div class="nav-tabs">
+              <button class="nav-tab active" onclick="showSection('about')">About</button>
+              <button class="nav-tab" onclick="showSection('skills')">Skills</button>
+              <button class="nav-tab" onclick="showSection('experience')">Experience</button>
+              <button class="nav-tab" onclick="showSection('portfolio')">Portfolio</button>
+              <button class="nav-tab" onclick="showSection('contact')">Contact</button>
+          </div>
+
+          <!-- About Section (khôi phục phiên bản đầu tiên) -->
+          <div id="about" class="content-section active">
+              <h1 class="section-title">About Me</h1>
+
+              <div class="terminal">
+                  <div class="terminal-header">
+                      <div class="terminal-dot dot-red"></div>
+                      <div class="terminal-dot dot-yellow"></div>
+                      <div class="terminal-dot dot-green"></div>
+                  </div>
+                  <div class="terminal-content">
+                      <div class="command-prompt">root@security:~$ whoami</div>
+                      <div class="command-output">Security Analyst | Penetration Tester | Cybersecurity Researcher</div>
+                      <div class="command-prompt">root@security:~$ cat skills.txt</div>
+                      <div class="command-output">Python | Kali Linux | Metasploit | Wireshark | Burp Suite | Nmap</div>
+                  </div>
+              </div>
+
+              <p style="font-size: 16px; line-height: 1.6; color: #d8dee9; margin: 20px 0; text-align: center;">
+                  Tôi là sinh viên chuyên ngành An ninh Mạng tại HUFLIT. 
+                  Với niềm đam mê bảo mật thông tin và tìm hiểu các kỹ thuật tấn công/phòng thủ, 
+                  tôi luôn nỗ lực học hỏi để trở thành chuyên gia trong lĩnh vực an ninh mạng.
+              </p>
+
+              <div class="terminal">
+                  <div class="terminal-header">
+                      <div class="terminal-dot dot-red"></div>
+                      <div class="terminal-dot dot-yellow"></div>
+                      <div class="terminal-dot dot-green"></div>
+                  </div>
+                  <div class="terminal-content">
+                      <div class="command-prompt">root@security:~$ cat education.txt</div>
+                      <div class="command-output">
+                          🎓 HUFLIT - Đại học Ngoại ngữ - Tin học TP.HCM<br>
+                          📚 Chuyên ngành: An ninh Mạng<br>
+                          ⏳ 2022 - Hiện tại<br>
+                          📊 GPA: 3.6/4.0
+                      </div>
+                  </div>
+              </div>
+
+              <div class="skills-grid" style="margin-top: 30px;">
+                  <div class="skill-item">
+                      <div class="skill-icon"><i class="fas fa-bullseye"></i></div>
+                      <div class="skill-title">Mục tiêu nghề nghiệp</div>
+                      <div class="skill-description">
+                          Trở thành chuyên gia phân tích bảo mật và kiểm thử xâm nhập. 
+                          Phát triển các giải pháp bảo mật sáng tạo và tham gia vào các dự án mã nguồn mở về an ninh mạng.
+                      </div>
+                  </div>
+
+                  <div class="skill-item">
+                      <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                      <div class="skill-title">Sở thích & Đam mê</div>
+                      <div class="skill-description">
+                          Tham gia các cuộc thi CTF, nghiên cứu lỗ hổng bảo mật, 
+                          phát triển công cụ bảo mật và đóng góp cho cộng đồng an ninh mạng Việt Nam.
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Skills Section -->
+          <div id="skills" class="content-section">
+              <h1 class="section-title">Technical Skills</h1>
+
+              <div class="skills-grid">
+                  <div class="skill-item">
+                      <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                      <div class="skill-title">Bảo mật hệ thống</div>
+                      <div class="skill-description">
+                          Kiểm thử xâm nhập, đánh giá lỗ hổng, phân tích mã độc, 
+                          và triển khai giải pháp bảo mật cho hệ thống mạng.
+                      </div>
+                  </div>
+
+                  <div class="skill-item">
+                      <div class="skill-icon"><i class="fas fa-lock"></i></div>
+                      <div class="skill-title">Bảo mật ứng dụng web</div>
+                      <div class="skill-description">
+                          Phát hiện và khắc phục các lỗ hổng OWASP Top 10, 
+                          kiểm thử bảo mật ứng dụng web và API.
+                      </div>
+                  </div>
+
+                  <div class="skill-item">
+                      <div class="skill-icon"><i class="fab fa-python"></i></div>
+                      <div class="skill-title">Phát triển công cụ bảo mật</div>
+                      <div class="skill-description">
+                          Phát triển script và công cụ tự động hóa bằng Python 
+                          cho các tác vụ bảo mật và phân tích.
+                      </div>
+                  </div>
+
+                  <div class="skill-item">
+                      <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                      <div class="skill-title">An ninh mạng</div>
+                      <div class="skill-description">
+                          Phân tích lưu lượng mạng, phát hiện xâm nhập, 
+                          và triển khai giải pháp bảo mật mạng.
+                      </div>
+                  </div>
+
+                  <div class="skill-item">
+                      <div class="skill-icon"><i class="fas fa-user-secret"></i></div>
+                      <div class="skill-title">Phân tích Forensic</div>
+                      <div class="skill-description">
+                          Thu thập và phân tích bằng chứng số, 
+                          điều tra sự cố an ninh và phục hồi dữ liệu.
+                      </div>
+                  </div>
+
+                  <div class="skill-item">
+                      <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                      <div class="skill-title">Bảo mật đám mây</div>
+                      <div class="skill-description">
+                          Bảo mật cơ sở hạ tầng đám mây, 
+                          triển khai giải pháp bảo mật trên AWS và Azure.
+                      </div>
+                  </div>
+              </div>
+
+              <div class="terminal" style="margin-top: 30px;">
+                  <div class="terminal-header">
+                      <div class="terminal-dot dot-red"></div>
+                      <div class="terminal-dot dot-yellow"></div>
+                      <div class="terminal-dot dot-green"></div>
+                  </div>
+                  <div class="terminal-content">
+                      <div class="command-prompt">root@security:~$ list-tools</div>
+                      <div class="command-output">
+                          <strong>Công cụ chuyên dụng:</strong><br>
+                          Kali Linux, Metasploit, Burp Suite, Wireshark, Nmap,<br>
+                          OWASP ZAP, John the Ripper, Hashcat, Autopsy, Volatility
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Experience Section -->
+          <div id="experience" class="content-section">
+              <h1 class="section-title">Professional Experience</h1>
+
+              <div class="timeline">
+                  <div class="timeline-item pulse" onclick="toggleExperience(1)">
+                      <div class="experience-title">Thực tập sinh An ninh mạng</div>
+                      <div class="experience-company">Cyberspace Security Company | TP.HCM</div>
+                      <div class="experience-date">06/2023 - Hiện tại</div>
+
+                      <div id="exp-content-1" class="timeline-content">
+                          <div class="experience-description">
+                              <ul>
+                                  <li>Thực hiện kiểm thử xâm nhập cho các ứng dụng web và hệ thống mạng</li>
+                                  <li>Phát triển các script Python để tự động hóa quá trình kiểm thử bảo mật</li>
+                                  <li>Tham gia đánh giá lỗ hổng bảo mật cho khách hàng doanh nghiệp</li>
+                                  <li>Nghiên cứu các kỹ thuật tấn công mới và phương pháp phòng thủ</li>
+                                  <li>Viết báo cáo đánh giá bảo mật và đề xuất giải pháp khắc phục</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="timeline-item" onclick="toggleExperience(2)">
+                      <div class="experience-title">Trưởng nhóm An ninh mạng</div>
+                      <div class="experience-company">Câu lạc bộ An ninh mạng HUFLIT | TP.HCM</div>
+                      <div class="experience-date">09/2022 - Hiện tại</div>
+
+                      <div id="exp-content-2" class="timeline-content">
+                          <div class="experience-description">
+                              <ul>
+                                  <li>Tổ chức các buổi workshop và cuộc thi CTF cho sinh viên</li>
+                                  <li>Quản lý nhóm 15 thành viên đam mê an ninh mạng</li>
+                                  <li>Phát triển tài liệu đào tạo về hacking có đạo đức</li>
+                                  <li>Đại diện trường tham gia các cuộc thi an ninh mạng toàn quốc</li>
+                                  <li>Tăng số lượng thành viên CLB lên 150% trong học kỳ đầu</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="timeline-item" onclick="toggleExperience(3)">
+                      <div class="experience-title">Chuyên gia Bug Bounty</div>
+                      <div class="experience-company">HackerOne & Bugcrowd | Remote</div>
+                      <div class="experience-date">2021 - Hiện tại</div>
+
+                      <div id="exp-content-3" class="timeline-content">
+                          <div class="experience-description">
+                              <ul>
+                                  <li>Phát hiện và báo cáo các lỗ hổng bảo mật nghiêm trọng</li>
+                                  <li>Chuyên về các kỹ thuật XSS, CSRF và bypass xác thực</li>
+                                  <li>Xếp hạng top 15% các hunter tại Đông Nam Á</li>
+                                  <li>Đóng góp vào cải thiện bảo mật cho các công ty Fortune 500</li>
+                                  <li>Phát triển công cụ tùy chỉnh để phát hiện lỗ hổng tự động</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="timeline-item" onclick="toggleExperience(4)">
+                      <div class="experience-title">Cộng tác viên mã nguồn mở</div>
+                      <div class="experience-company">Dự án bảo mật trên GitHub</div>
+                      <div class="experience-date">2020 - Hiện tại</div>
+
+                      <div id="exp-content-4" class="timeline-content">
+                          <div class="experience-description">
+                              <ul>
+                                  <li>Đóng góp cho các công cụ bảo mật như OWASP ZAP và Metasploit</li>
+                                  <li>Phát triển module bảo mật cho các dự án mã nguồn mở</li>
+                                  <li>Bảo trì tài liệu và hướng dẫn sử dụng công cụ bảo mật</li>
+                                  <li>Tham gia cộng đồng mã nguồn mở tập trung vào bảo mật</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="timeline-item" onclick="toggleExperience(5)">
+                      <div class="experience-title">Diễn giả tại hội thảo</div>
+                      <div class="experience-company">Hội thảo An ninh mạng Việt Nam</div>
+                      <div class="experience-date">2023 - Hiện tại</div>
+
+                      <div id="exp-content-5" class="timeline-content">
+                          <div class="experience-description">
+                              <ul>
+                                  <li>Trình bày nghiên cứu "Hệ thống phát hiện đe dọa sử dụng AI"</li>
+                                  <li>Hướng dẫn workshop về kỹ thuật kiểm thử xâm nhập thực tế</li>
+                                  <li>Tham gia thảo luận về nghề nghiệp trong lĩnh vực an ninh mạng</li>
+                                  <li>Chia sẻ kiến thức về các mối đe dọa bảo mật mới tại Đông Nam Á</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Portfolio Section -->
+          <div id="portfolio" class="content-section">
+              <h1 class="section-title">Security Projects</h1>
+
+              <div class="portfolio-grid">
+                  <div class="portfolio-item">
+                      <div class="portfolio-title"><i class="fas fa-search"></i> Network Vulnerability Scanner</div>
+                      <div class="portfolio-category">Penetration Testing</div>
+                      <div class="portfolio-description">
+                          Công cụ quét lỗ hổng mạng tự động với khả năng phát hiện dịch vụ, 
+                          xác định hệ điều hành và đánh giá lỗ hổng. Xây dựng bằng Python.
+                      </div>
+                  </div>
+
+                  <div class="portfolio-item">
+                      <div class="portfolio-title"><i class="fas fa-shield-alt"></i> Advanced Web Firewall</div>
+                      <div class="portfolio-category">Web Security</div>
+                      <div class="portfolio-description">
+                          WAF tùy chỉnh với khả năng chặn SQLi, XSS và các tấn công phổ biến. 
+                          Sử dụng machine learning để phát hiện bất thường.
+                      </div>
+                  </div>
+
+                  <div class="portfolio-item">
+                      <div class="portfolio-title"><i class="fas fa-key"></i> Password Security Auditor</div>
+                      <div class="portfolio-category">Security Tools</div>
+                      <div class="portfolio-description">
+                          Công cụ đánh giá độ mạnh mật khẩu với tấn công từ điển, brute force. 
+                          Hỗ trợ nhiều thuật toán băm khác nhau.
+                      </div>
+                  </div>
+
+                  <div class="portfolio-item">
+                      <div class="portfolio-title"><i class="fas fa-mobile-alt"></i> Mobile Security Framework</div>
+                      <div class="portfolio-category">Mobile Security</div>
+                      <div class="portfolio-description">
+                          Framework kiểm tra bảo mật ứng dụng di động với phân tích tĩnh và động. 
+                          Tích hợp với các công cụ kiểm thử Android/iOS.
+                      </div>
+                  </div>
+
+                  <div class="portfolio-item">
+                      <div class="portfolio-title"><i class="fas fa-fish"></i> Phishing Detection AI</div>
+                      <div class="portfolio-category">Machine Learning</div>
+                      <div class="portfolio-description">
+                          Hệ thống phát hiện phishing sử dụng NLP và computer vision. 
+                          Đạt độ chính xác 97.8% trên tập dữ liệu thực tế.
+                      </div>
+                  </div>
+
+                  <div class="portfolio-item">
+                      <div class="portfolio-title"><i class="fas fa-lock"></i> Secure Chat Application</div>
+                      <div class="portfolio-category">Cryptography</div>
+                      <div class="portfolio-description">
+                          Ứng dụng chat bảo mật với mã hóa end-to-end, forward secrecy. 
+                          Xây dựng bằng Node.js và React.
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Contact Section -->
+          <div id="contact" class="content-section">
+              <h1 class="section-title">Get In Touch</h1>
+
+              <div class="terminal">
+                  <div class="terminal-header">
+                      <div class="terminal-dot dot-red"></div>
+                      <div class="terminal-dot dot-yellow"></div>
+                      <div class="terminal-dot dot-green"></div>
+                  </div>
+                  <div class="terminal-content">
+                      <div class="command-prompt">root@security:~$ echo "Ready for collaboration"</div>
+                      <div class="command-output">
+                          Status: Available for security projects<br>
+                          Interests: Penetration testing, security research, tool development<br>
+                          Contact: Always open to discuss security challenges
+                      </div>
+                  </div>
+              </div>
+
+              <form class="contact-form" onsubmit="handleSubmit(event)">
+                  <div class="form-group">
+                      <input type="text" placeholder="Full Name" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="email" placeholder="Email Address" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" placeholder="Subject">
+                  </div>
+                  <div class="form-group">
+                      <textarea placeholder="Your Message" required></textarea>
+                  </div>
+                  <button type="submit" class="submit-btn">Send Message</button>
+              </form>
+
+              <div style="text-align: center; margin-top: 30px; color: #88c0d0;">
+                  <p><i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, Vietnam</p>
+                  <p style="margin-top: 10px;">
+                      <a href="https://github.com/SecretJA" target="_blank" style="color: #88c0d0; text-decoration: none; margin: 0 10px;">
+                          <i class="fab fa-github"></i> GitHub
+                      </a>
+                      <a href="https://www.linkedin.com/in/bao-pham-4a18a2324/" target="_blank" style="color: #88c0d0; text-decoration: none; margin: 0 10px;">
+                          <i class="fab fa-linkedin"></i> LinkedIn
+                      </a>
+                      <a href="https://x.com/BaoHoangPhm" target="_blank" style="color: #88c0d0; text-decoration: none; margin: 0 10px;">
+                          <i class="fab fa-twitter"></i> Twitter
+                      </a>
+                      <a href="mailto:pphamhoanggiabao19092004@gmail.com" style="color: #88c0d0; text-decoration: none; margin: 0 10px;">
+                          <i class="fas fa-envelope"></i> Email
+                      </a>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  
 </body>
 
 </html>
