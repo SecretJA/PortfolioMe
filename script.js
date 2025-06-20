@@ -38,6 +38,147 @@ function showSection(sectionId) {
 
 // Function to toggle experience details
 function toggleExperience(id) {
+    const content = document.getElementById('exp-content-' + id);
+    const isActive = content.classList.contains('active');
+    
+    // Hide all experience content
+    document.querySelectorAll('.timeline-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Show selected content if it wasn't active
+    if (!isActive) {
+        content.classList.add('active');
+    }
+}
+
+// Function to toggle mobile menu
+function toggleMobileMenu() {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    
+    if (sidebar.classList.contains('mobile-active')) {
+        sidebar.classList.remove('mobile-active');
+        if (overlay) overlay.style.display = 'none';
+    } else {
+        sidebar.classList.add('mobile-active');
+        if (overlay) overlay.style.display = 'block';
+    }
+}
+
+// Function to copy email to clipboard
+function copyEmail() {
+    const email = 'pphamhoanggiabao19092004@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+        showNotification('Email đã được sao chép!', 'success');
+    }).catch(() => {
+        showNotification('Không thể sao chép email', 'error');
+    });
+}
+
+// Function to show notifications
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-${type === 'success' ? 'check' : type === 'error' ? 'times' : 'info'}"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
+
+// Function to handle form submission
+function handleSubmit(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+    };
+    
+    // Simulate form submission
+    showNotification('Tin nhắn đã được gửi thành công!', 'success');
+    event.target.reset();
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Restore active tab from localStorage
+    const activeTab = localStorage.getItem('activeTab') || 'about';
+    showSection(activeTab);
+    
+    // Add scroll to top functionality
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.id = 'scroll-top';
+    scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollTopBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    document.body.appendChild(scrollTopBtn);
+    
+    // Show/hide scroll to top button
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Close mobile menu when clicking overlay
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('mobile-menu-overlay')) {
+            toggleMobileMenu();
+        }
+    });
+    
+    // Handle mobile menu close on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 992) {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            sidebar.classList.remove('mobile-active');
+            if (overlay) overlay.style.display = 'none';
+        }
+    });
+    
+    // Add particles background
+    createParticles();
+});
+
+// Function to create floating particles
+function createParticles() {
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'particles-container';
+    document.body.appendChild(particlesContainer);
+    
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particlesContainer.appendChild(particle);
+    }
+}etails
+function toggleExperience(id) {
     const content = document.getElementById(`exp-content-${id}`);
     if (content.classList.contains('active')) {
         content.classList.remove('active');

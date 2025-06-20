@@ -755,6 +755,7 @@ body {
   .sidebar {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    padding: 15px;
   }
   
   .sidebar.mobile-active {
@@ -774,6 +775,159 @@ body {
   .notification.show {
     transform: translateY(0);
   }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .name {
+    font-size: 20px;
+  }
+  
+  .title {
+    font-size: 14px;
+  }
+  
+  .contact-item {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-item div {
+    font-size: 11px;
+  }
+  
+  .main-content {
+    padding: 15px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .nav-tabs {
+    padding: 10px;
+    gap: 8px;
+  }
+  
+  .nav-tab {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .skills-grid, .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .skill-item, .portfolio-item {
+    padding: 15px;
+  }
+  
+  .terminal {
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  .command-output {
+    font-size: 13px;
+  }
+  
+  .edu-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .edu-text {
+    font-size: 13px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 280px;
+  }
+  
+  .contact-form {
+    margin: 15px 0;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    padding: 12px 25px;
+    font-size: 13px;
+  }
+  
+  .timeline-item {
+    width: calc(100% - 40px);
+    margin-left: 40px;
+    padding: 15px;
+  }
+  
+  .experience-title {
+    font-size: 18px;
+  }
+  
+  .experience-company {
+    font-size: 14px;
+  }
+  
+  .experience-date {
+    font-size: 12px;
+  }
+  
+  .experience-description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-tabs {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .nav-tab {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .social-links {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .terminal-content {
+    font-size: 12px;
+  }
+  
+  .edu-item {
+    padding: 3px 0;
+  }
+  
+  .portfolio-title, .skill-title {
+    font-size: 16px;
+  }
+  
+  .portfolio-description, .skill-description {
+    font-size: 13px;
+  }
 }
 
 /* Theme support */
@@ -789,6 +943,30 @@ body[data-theme="light"] .sidebar {
 
 body[data-theme="light"] .nav-tabs {
   background: rgba(255, 255, 255, 0.95);
+}
+
+/* Education info styling */
+.education-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.edu-icon {
+  font-size: 16px;
+  min-width: 20px;
+}
+
+.edu-text {
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 /* Enhanced animations */
