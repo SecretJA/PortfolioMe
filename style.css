@@ -764,12 +764,39 @@ body {
   }
   
   .contact-item {
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .contact-item span {
+    margin-right: 0;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #88c0d0;
+    align-self: center;
   }
   
   .contact-item div {
-    font-size: 11px;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .contact-item div strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: #88c0d0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .contact-item .email-content {
+    word-break: break-all;
+    line-height: 1.4;
   }
   
   .main-content {
@@ -823,7 +850,29 @@ body {
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 280px;
+    padding: 20px 15px;
+  }
+  
+  .contact-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    background: rgba(46, 52, 64, 0.7);
+  }
+  
+  .contact-item span {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-item div {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .contact-item div strong {
+    font-size: 11px;
+    margin-bottom: 6px;
   }
   
   .contact-form {
@@ -865,6 +914,42 @@ body {
 }
 
 @media (max-width: 480px) {
+  .sidebar {
+    padding: 15px 10px;
+  }
+  
+  .contact-item {
+    padding: 18px 12px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contact-item span {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #5e81ac;
+  }
+  
+  .contact-item div {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e5e9f0;
+  }
+  
+  .contact-item div strong {
+    font-size: 10px;
+    margin-bottom: 8px;
+    color: #81a1c1;
+    font-weight: 700;
+  }
+  
+  .contact-item .email-content {
+    font-size: 13px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
   .nav-tabs {
     flex-direction: column;
     gap: 5px;
