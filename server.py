@@ -51,7 +51,7 @@ def send_message():
             return jsonify({'success': False, 'error': 'Missing required fields'})
 
         # Create Word document
-        filename = create_worddocument(data)
+        filename = create_word_document(data)
 
         # Save to JSON file as backup
         backup_data = {
