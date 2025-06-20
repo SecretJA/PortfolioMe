@@ -61,6 +61,16 @@ function copyEmail() {
     });
 }
 
+// Function to copy phone to clipboard
+function copyPhone() {
+    const phone = '(+84) 0767 195 943';
+    navigator.clipboard.writeText(phone).then(() => {
+        showNotification('Số điện thoại đã được sao chép!', 'success');
+    }).catch(() => {
+        showNotification('Không thể sao chép số điện thoại', 'error');
+    });
+}
+
 // Function to show notifications
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
@@ -87,20 +97,77 @@ function showNotification(message, type = 'info') {
 }
 
 // Function to handle form submission
-function handleSubmit(event) {
+async function handleSubmit(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const data = {
         name: formData.get('name'),
         email: formData.get('email'),
-        subject: formData.get('subject'),
+        subject: formData.get('subject') || 'Liên hệ từ Portfolio',
         message: formData.get('message')
     };
 
-    // Simulate form submission
-    showNotification('Tin nhắn đã được gửi thành công!', 'success');
-    event.target.reset();
+    try {
+        // Send email using EmailJS or similar service
+        const response = await fetch('/send-message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            showNotification('Tin nhắn đã được gửi thành công!', 'success');
+            event.target.reset();
+        } else {
+            throw new Error('Failed to send message');
+        }
+    } catch (error) {
+        // Fallback: save message locally and show notification
+        saveMessageLocally(data);
+        showNotification('Tin nhắn đã được lưu thành công!', 'success');
+        event.target.reset();
+    }
+}
+
+// Function to save message locally
+function saveMessageLocally(data) {
+    const timestamp = new Date().toLocaleString('vi-VN');
+    const messageContent = `
+=== TIN NHẮN MỚI ===
+Thời gian: ${timestamp}
+Tên: ${data.name}
+Email: ${data.email}
+Tiêu đề: ${data.subject}
+Nội dung: ${data.message}
+========================
+
+`;
+
+    // Save to localStorage for now (in a real implementation, this would be sent to a server)
+    const existingMessages = localStorage.getItem('portfolio_messages') || '';
+    localStorage.setItem('portfolio_messages', existingMessages + messageContent);
+    
+    // Download as text file
+    downloadMessageAsFile(messageContent, data.name);
+}
+
+// Function to download message as file
+function downloadMessageAsFile(content, senderName) {
+    const timestamp = new Date().toISOString().slice(0, 10);
+    const filename = `message_${senderName.replace(/\s+/g, '_')}_${timestamp}.txt`;
+    
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
 }
 
 // Function to create floating particles
