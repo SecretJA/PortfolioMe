@@ -30,7 +30,7 @@
           </div>
 
           <div class="contact-info">
-              <div class="contact-item">
+              <div class="contact-item" onclick="copyEmail()" style="cursor: pointer;" title="Click to copy email">
                   <span><i class="fas fa-envelope"></i></span>
                   <div class="email-content">
                       <strong>EMAIL</strong><br>
@@ -71,6 +71,11 @@
               </div>
           </div>
       </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+      </button>
 
       <!-- Main Content -->
       <div class="main-content">
@@ -400,18 +405,20 @@
 
               <form class="contact-form" onsubmit="handleSubmit(event)">
                   <div class="form-group">
-                      <input type="text" placeholder="Full Name" required>
+                      <input type="text" name="name" placeholder="Full Name" required>
                   </div>
                   <div class="form-group">
-                      <input type="email" placeholder="Email Address" required>
+                      <input type="email" name="email" placeholder="Email Address" required>
                   </div>
                   <div class="form-group">
-                      <input type="text" placeholder="Subject">
+                      <input type="text" name="subject" placeholder="Subject">
                   </div>
                   <div class="form-group">
-                      <textarea placeholder="Your Message" required></textarea>
+                      <textarea name="message" placeholder="Your Message" required></textarea>
                   </div>
-                  <button type="submit" class="submit-btn">Send Message</button>
+                  <button type="submit" class="submit-btn">
+                      <i class="fas fa-paper-plane"></i> Send Message
+                  </button>
               </form>
 
               <div style="text-align: center; margin-top: 30px; color: #88c0d0;">
@@ -436,6 +443,7 @@
   </div>
 
   
+<script src="script.js"></script>
 </body>
 
 </html>
