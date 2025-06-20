@@ -61,6 +61,16 @@ function copyEmail() {
     });
 }
 
+// Function to copy phone to clipboard
+function copyPhone() {
+    const phone = '(+84) 0767 195 943';
+    navigator.clipboard.writeText(phone).then(() => {
+        showNotification('Số điện thoại đã được sao chép!', 'success');
+    }).catch(() => {
+        showNotification('Không thể sao chép số điện thoại', 'error');
+    });
+}
+
 // Function to show notifications
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
@@ -98,9 +108,30 @@ function handleSubmit(event) {
         message: formData.get('message')
     };
 
-    // Simulate form submission
-    showNotification('Tin nhắn đã được gửi thành công!', 'success');
-    event.target.reset();
+    // Show loading notification
+    showNotification('Đang gửi tin nhắn...', 'info');
+
+    // Send data to server
+    fetch('/send-message', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.success) {
+            showNotification('Tin nhắn đã được gửi thành công!', 'success');
+            event.target.reset();
+        } else {
+            showNotification('Có lỗi xảy ra khi gửi tin nhắn', 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showNotification('Có lỗi xảy ra khi gửi tin nhắn', 'error');
+    });
 }
 
 // Function to create floating particles
