@@ -142,21 +142,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close mobile menu when clicking overlay
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('mobile-menu-overlay')) {
-            toggleMobileMenu();
-        }
-    });
-    
-    // Handle mobile menu close on window resize
+    // Responsive layout handling
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 992) {
-            const sidebar = document.querySelector('.sidebar');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            sidebar.classList.remove('mobile-active');
-            if (overlay) overlay.style.display = 'none';
-        }
+        // Sidebar is always visible, no special handling needed
     });
     
     // Add particles background
@@ -177,7 +165,7 @@ function createParticles() {
         particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
         particlesContainer.appendChild(particle);
     }
-}etails
+// Function to toggle experience details
 function toggleExperience(id) {
     const content = document.getElementById(`exp-content-${id}`);
     if (content.classList.contains('active')) {
@@ -350,30 +338,14 @@ function createParticles() {
     }
 }
 
-// Function to handle mobile menu toggle
+// Function to handle mobile menu toggle (deprecated - always show sidebar)
 function toggleMobileMenu() {
-    const sidebar = document.querySelector('.sidebar');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-    
-    sidebar.classList.toggle('mobile-active');
-    
-    if (!mobileMenuOverlay) {
-        const overlay = document.createElement('div');
-        overlay.className = 'mobile-menu-overlay';
-        overlay.onclick = closeMobileMenu;
-        document.body.appendChild(overlay);
-    }
+    // No longer needed - sidebar always visible
 }
 
-// Function to close mobile menu
+// Function to close mobile menu (deprecated)
 function closeMobileMenu() {
-    const sidebar = document.querySelector('.sidebar');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-    
-    sidebar.classList.remove('mobile-active');
-    if (mobileMenuOverlay) {
-        document.body.removeChild(mobileMenuOverlay);
-    }
+    // No longer needed - sidebar always visible
 }
 
 // Initialize when DOM is loaded
@@ -439,9 +411,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add window resize handler
+    // Window resize handler
     window.addEventListener('resize', () => {
-        closeMobileMenu();
+        // Sidebar always visible, no special handling needed
     });
 });
 
@@ -453,8 +425,8 @@ document.addEventListener('keydown', function(e) {
         // Focus search if exists
     }
     
-    // Escape to close mobile menu
+    // Escape key handling (mobile menu removed)
     if (e.key === 'Escape') {
-        closeMobileMenu();
+        // No longer needed
     }
 });
